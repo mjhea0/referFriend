@@ -1,5 +1,5 @@
 var refer = require('../models/refer.js');
-var users = require('../models/user.js');
+var users = require('../models/users.js');
 
 exports.index = function(req, res){
   res.render('index', { title: 'Refer-a-Friend'});

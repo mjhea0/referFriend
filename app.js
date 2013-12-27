@@ -6,7 +6,7 @@ var path = require('path');
 var app = express();
 var mongoose = require('mongoose');
 var config = require('./config');
-var user = require('./models/user.js');
+var user = require('./models/users.js');
 var passport = require('passport');
 var GoogleStrategy = require('passport-google').Strategy;
 

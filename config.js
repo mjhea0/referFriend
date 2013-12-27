@@ -1,11 +1,20 @@
-var herokuReturn = "http://referfriend.herokuapp.com/auth/google/callback"
-var herokuRealm = "http://referfriend.herokuapp.com/"
+var config;
 
-
-module.exports = {
-  google: {
-    returnURL: process.env.herokuReturn || 'http://127.0.0.1:1337/auth/google/callback',
-    realm: process.env.herokuRealm || 'http://127.0.0.1:1337'
+config = {
+  production: {
+    google: {
+      returnURL: 'http://referFriend.herokuapp.com/auth/google/callback',
+      realm: 'http://referFriend.herokuapp.com/'
+    },
+    mongoUrl: 'mongodb://localhost/realize-change'
   },
-  mongoUrl: process.env.MONGOLAB_URI || 'mongodb://localhost/referFriend'
+  development: {
+    google: {
+      returnURL: 'http://localhost:1337/auth/google/callback',
+      realm: 'http://localhost:1337/'
+    },
+    mongoUrl: 'mongodb://localhost/realize-change',
+  }
 };
+
+module.exports = global.process.env.NODE_ENV === 'production' ? config.production : config.development;

@@ -1,14 +1,13 @@
-var mongoose = require('mongoose'),
-    Schema = mongoose.Schema,
-    passportLocalMongoose = require('passport-local-mongoose');
+var mongoose = require('mongoose');
+var config = require('../config');
 
-var Refer = new Schema({
-    name: String,
-    email: String
+console.log(config);
+
+var referSchema = new mongoose.Schema({
+	name: String,
+	email: String,
+	createdDate: Date,
+	refererEmail: String,
 });
 
-Refer.plugin(passportLocalMongoose);
-
-module.exports = mongoose.model('Refer', Refer);
-
-
+module.exports = mongoose.model('Refer', referSchema);

@@ -1,17 +1,10 @@
 extends layout
 
-block content             
-  h1 Refer-a-Friend
-  p.lead Reward your friends - and yourself.
-  a(href="/") Go home
-  br
-  br
-  if (!user)
-    a(href="/login") Login
-    br
-    a(href="/register") Register
-  if (user)
-    p You are currently logged in as #{user.username}
-    a(href="/logout") Logout
-    br
-    a(href="/refer") Refer
+block content
+	h1= title
+	p.lead Reward your friends. Reward yourself.
+	br
+	form(METHOD="LINK", ACTION="/auth/google")
+		input(type="submit", value="Login with Google", class='btn btn-md btn-primary')
+	
+	

@@ -42,15 +42,20 @@ module.exports = function (app) {
   });
 
   app.get('/refer', ensureAuthenticated, function(req, res) {
-    res.render('refer', { user : req.user });
+    res.render('refer', { user : req.user});
   });
 
 
-
-  app.post('/generate', function(req, res){
+  app.post('/generate', ensureAuthenticated, function(req, res){
     user = new Refer({name:req.body.name, email:req.body.email})
+    name = req.body.name
+    email = req.body.email
     user.save()
-    res.render('/test',{name:req.body.name, email:req.body.email});
+    res.redirect('/test');
+  });
+
+  app.get('/test', ensureAuthenticated, function(req, res) {
+    res.render('test');
   });
 
   // test authentication

@@ -1,20 +1,17 @@
-var config;
+// development
+// module.exports = {
+//   google: {
+//     returnURL: 'http://127.0.0.1:1337/auth/google/callback',
+//     realm: 'http://127.0.0.1:1337'
+//   },
+//   mongoUrl: process.env.MONGOLAB_URI || 'mongodb://localhost/referFriend'
+// };
 
-config = {
-  production: {
-    google: {
-      returnURL: 'http://referFriend.herokuapp.com/auth/google/callback',
-      realm: 'http://referFriend.herokuapp.com/'
-    },
-    mongoUrl: 'mongodb://localhost/realize-change'
+// production
+module.exports = {
+  google: {
+    returnURL: 'http://referfriend.herokuapp.com/auth/google/callback',
+    realm: 'http://referfriend.herokuapp.com/'
   },
-  development: {
-    google: {
-      returnURL: 'http://localhost:1337/auth/google/callback',
-      realm: 'http://localhost:1337/'
-    },
-    mongoUrl: 'mongodb://localhost/realize-change',
-  }
+  mongoUrl: process.env.MONGOLAB_URI || 'mongodb://localhost/referFriend'
 };
-
-module.exports = global.process.env.NODE_ENV === 'production' ? config.production : config.development;

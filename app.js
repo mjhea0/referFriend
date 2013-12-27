@@ -5,7 +5,7 @@ var http = require('http');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var mongolab = require('config.js');
+var mongolab = require('./config.js');
 
 // main config
 var app = express();
@@ -36,6 +36,8 @@ var Account = require('./models/account');
 passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
+
+console.log(mongolab)
 
 // mongoose
 var mongo = process.env.mongolab || 'mongodb://localhost/passport_local_mongoose'

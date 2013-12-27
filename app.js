@@ -37,8 +37,6 @@ passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
-console.log(mongolab)
-
 // mongoose
 var mongo = process.env.mongolab || 'mongodb://localhost/passport_local_mongoose'
 mongoose.connect(mongo);

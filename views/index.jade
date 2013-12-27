@@ -13,9 +13,13 @@ html
     a(href="/ping") Ping
     br
     br
-    a(href="/login") Login
-    br
-    a(href="/register") Register
+    if (!user)
+      a(href="/login") Login
+      br
+      a(href="/register") Register
+    if (user)
+      p You are currently logged in as #{user.username}
+      a(href="/logout") Logout
 
   script(src='http://code.jquery.com/jquery.js')
   script(src='js/bootstrap.min.js')

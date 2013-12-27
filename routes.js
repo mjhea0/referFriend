@@ -50,6 +50,7 @@ module.exports = function (app) {
   app.post('/generate', function(req, res){
     user = new Refer({name:req.body.name, email:req.body.email})
     user.save()
+    console.log(user)
     res.send(req.body.name, req.body.email);
   });
 

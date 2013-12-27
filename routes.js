@@ -5,11 +5,11 @@ var Refer = require('./models/refer');
 module.exports = function (app) {
     
   app.get('/', function (req, res) {
-    res.render('index', { user : req.user });
+    res.render('index', { user : req.user, title: "Refer-a-Friend" });
   });
 
   app.get('/register', function(req, res) {
-    res.render('register', { });
+    res.render('register', {title: "Refer-a-Friend | Register" });
   });
 
   app.post('/register', function(req, res) {
@@ -25,7 +25,7 @@ module.exports = function (app) {
   });
 
   app.get('/login', function(req, res) {
-    res.render('login', { user : req.user });
+    res.render('login', { user : req.user, title: "Refer-a-Friend | Login" });
   });
 
   app.post('/login', passport.authenticate('local'), function(req, res) {
@@ -37,12 +37,8 @@ module.exports = function (app) {
     res.redirect('/');
   });
 
-  app.get('/ping', function(req, res){
-    res.send("pong!", 200);
-  });
-
   app.get('/refer', ensureAuthenticated, function(req, res) {
-    res.render('refer', { user : req.user});
+    res.render('refer', { user : req.user, title: "Refer-a-Friend | Refer"});
   });
 
 
@@ -51,11 +47,7 @@ module.exports = function (app) {
     name = req.body.name
     email = req.body.email
     user.save()
-    res.redirect('/test');
-  });
-
-  app.get('/test', ensureAuthenticated, function(req, res) {
-    res.render('test');
+    res.redirect('/refer');
   });
 
   // test authentication

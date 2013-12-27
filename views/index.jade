@@ -1,11 +1,9 @@
 extends layout
 
 block content             
-  h1 Say something meaningful here.
-  p.lead Say something worthwhile here.
+  h1 Refer-a-Friend
+  p.lead Reward your friends - and yourself.
   a(href="/") Go home
-  br
-  a(href="/ping") Ping
   br
   br
   if (!user)
@@ -15,3 +13,5 @@ block content
   if (user)
     p You are currently logged in as #{user.username}
     a(href="/logout") Logout
+    br
+    a(href="/refer") Refer

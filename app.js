@@ -11,7 +11,7 @@ var passport = require('passport');
 var GoogleStrategy = require('passport-google').Strategy;
 
 // connect to mongo
-mongoose.connect(config.mongoUrl);
+mongoose.connect("mongodb://heroku_app20718248:4hdn8n64i7d0a0tb8u0ofpq7m2@ds061218.mongolab.com:61218/heroku_app20718248");
 
 // passport settings
 passport.serializeUser(function(user,done)

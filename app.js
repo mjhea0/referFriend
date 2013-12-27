@@ -37,7 +37,9 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 // mongoose
-mongoose.connect('mongodb://localhost/passport_local_mongoose');
+var MONGOLAB_URI= "add_your_mongolab_uri_here"
+var mongo = process.env.MONGOLAB_URI || 'mongodb://localhost/passport_local_mongoose'
+mongoose.connect(mongo);
 
 // routes
 require('./routes')(app);

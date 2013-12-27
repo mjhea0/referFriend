@@ -5,6 +5,7 @@ var http = require('http');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var mongolab = require('config.js');
 
 // main config
 var app = express();
@@ -37,8 +38,7 @@ passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
 // mongoose
-MONGOLAB_URI = "mongodb://heroku_app20718248:4hdn8n64i7d0a0tb8u0ofpq7m2@ds061218.mongolab.com:61218/heroku_app20718248"
-var mongo = process.env.MONGOLAB_URI || 'mongodb://localhost/passport_local_mongoose'
+var mongo = process.env.mongolab || 'mongodb://localhost/passport_local_mongoose'
 mongoose.connect(mongo);
 
 // routes

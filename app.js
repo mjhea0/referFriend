@@ -9,7 +9,9 @@ var user = require('./models/users.js');
 var passport = require('passport');
 var GoogleStrategy = require('passport-google').Strategy;
 
-var env = process.env.NODE_ENV || 'dev';
+console.log(process.env.NODE_ENV)
+
+var env = process.env.NODE_ENV
 if ('dev' == env) {
   var config = require('./config-dev.js');
 } else {

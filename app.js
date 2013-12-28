@@ -14,7 +14,7 @@ console.log(process.env.NODE_ENV)
 
 if (!process.env.NODE_ENV) {
   var config = require('./config-dev.js');
-} else if (process.env.NODE_ENV == "Production") {
+} else if (process.env.NODE_ENV == "production") {
   var config = require('./config-pro.js');
 };
 

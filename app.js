@@ -98,7 +98,6 @@ app.get('/logout', function(req, res){
 app.post('/account', ensureAuthenticated, routes.accountPost);
 app.use(function(req, res, next){
   res.status(404);
-
   if (req.accepts('jade')) {
     res.render('404', { url: req.url });
     return;
@@ -115,4 +114,6 @@ function ensureAuthenticated(req, res, next) {
 http.createServer(app).listen(app.get('port'), function(){
   console.log('\nListening on port ' + app.get('port'));
 });
+
+module.exports = app;
 

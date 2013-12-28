@@ -6,11 +6,12 @@ block content
   a(href="/logout") Logout
   br
   br
+  #{err}
   form.form-generate(role='form', action="/account",method="post", style='max-width: 300px;')
     .form-group
-        input.form-control(for='name', class='name', type='text', name="name", placeholder="Enter your friend's Name")
+        input.form-control(for='name', class='name', type='text', name="name", placeholder="Enter your friend's Name" required)
     .form-group
-      input.form-control(for='email', class='email', type='email', name="email", placeholder="Enter your friend's Email")
+      input.form-control(for='email', class='email', type='email', name="email", placeholder="Enter your friend's Email" required)
       input(class='hidden' type="hidden", name="refererEmail", value='#{email}')
     button.btn.btn-primary.btn-generate(type='submit') Generate
   br

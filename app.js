@@ -95,10 +95,15 @@ app.get('/logout', function(req, res){
 	req.logOut();
 	res.redirect('/');
 });
-app.get('/error', function(req,res){
-	res.send(401,'{err: you got an error. bud.}');
-});
 app.post('/account', ensureAuthenticated, routes.accountPost);
+app.use(function(req, res, next){
+  res.status(404);
+
+  if (req.accepts('jade')) {
+    res.render('404', { url: req.url });
+    return;
+  }
+});
 
 // authentication helper
 function ensureAuthenticated(req, res, next) {

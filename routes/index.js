@@ -18,10 +18,11 @@ exports.accountPost = function(req, res) {
   newRefer.refererEmail = data.refererEmail;
 
   newRefer.save(function(err){
-  	if(err){
-  		throw err;
-  	}
-  	console.log("New referal, " + newRefer.name + ", was created");
-  	res.send(200, newRefer);
-	});	
+    if(err){throw err;}
+    console.log("New referal, " + newRefer.name + ", was created");
+    refer.find({ email: newRefer.email }, function(err, doc) {
+      if (err) return console.error(err); 
+      res.send(200,doc)
+    });
+  });       
 };

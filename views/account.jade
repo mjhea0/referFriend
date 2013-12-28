@@ -6,13 +6,28 @@ block content
   a(href="/logout") Logout
   br
   br
-  form(role='form', action="/account",method="post", style='max-width: 300px;')
+  form.form-generate(role='form', action="/account",method="post", style='max-width: 300px;')
     .form-group
-        input.form-control(type='text', name="name", placeholder="Enter your friend's Name")
+        input.form-control(for='name', class='name', type='text', name="name", placeholder="Enter your friend's Name")
     .form-group
-      input.form-control(type='email', name="email", placeholder="Enter your friend's Email")
-      input(type="hidden", name="refererEmail",value= '#{email}')
-    button.btn.btn-primary(type='submit') Generate
+      input.form-control(for='email', class='email', type='email', name="email", placeholder="Enter your friend's Email")
+      input(class='hidden' type="hidden", name="refererEmail", value='#{email}')
+    button.btn.btn-primary.btn-generate(type='submit') Generate
   br
-  p.lead Refer Info
-  email= newEmail
+  #results
+    h2 Referral Info
+    hr
+    div
+      | Name:
+      &nbsp;
+      span#name
+    div
+      | Email:
+      &nbsp;
+      span#email
+    div
+      | ID:
+      &nbsp;
+      span#id
+    br
+    button.btn.btn-primary#again(type='') Again?

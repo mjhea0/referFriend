@@ -5,10 +5,15 @@ var http = require('http');
 var path = require('path');
 var app = express();
 var mongoose = require('mongoose');
-var config = require('./config');
 var user = require('./models/users.js');
 var passport = require('passport');
 var GoogleStrategy = require('passport-google').Strategy;
+
+if ('development' == app.get('env')) {
+  var config = require('./config-dev.js');
+} else if ('production' == app.get('env')) {
+  var config = require('./config-pro.js');
+};
 
 // connect to mongo
 mongoose.connect(process.env.MONGOLAB_URI || config.mongoUrl);

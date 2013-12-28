@@ -23,14 +23,6 @@ describe('referFriend', function(){
     })
   }); 
 
-  describe('when requesting resource /accounts when logged in', function(){
-    it('should respond with 200 - OK', function(done){
-      request(app)
-      .get('/account')
-      .expect(302, done);
-    })
-  }); 
-
   describe('when requesting resource /missing', function(){
     it('should respond with 404', function(done){
       request(app)

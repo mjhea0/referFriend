@@ -30,7 +30,3 @@ exports.accountPost = function(req, res) {
     };
   });       
 };
-
-exports.error = function(req,res){
-  res.send(404,'error');
-};

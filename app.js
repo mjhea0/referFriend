@@ -12,7 +12,7 @@ var GoogleStrategy = require('passport-google').Strategy;
 var env = process.env.NODE_ENV || 'dev';
 if ('dev' == env) {
   var config = require('./config-dev.js');
-} else if ('production' == env) {
+} else {
   var config = require('./config-pro.js');
 };
 

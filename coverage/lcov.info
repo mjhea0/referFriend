@@ -14,7 +14,7 @@ FN:99,(anonymous_11)
 FN:108,ensureAuthenticated
 FN:114,(anonymous_13)
 FNF:13
-FNH:2
+FNH:3
 FNDA:0,(anonymous_1)
 FNDA:0,(anonymous_2)
 FNDA:0,(anonymous_3)
@@ -26,7 +26,7 @@ FNDA:0,(anonymous_8)
 FNDA:0,(anonymous_9)
 FNDA:0,(anonymous_10)
 FNDA:1,(anonymous_11)
-FNDA:0,ensureAuthenticated
+FNDA:2,ensureAuthenticated
 FNDA:1,(anonymous_13)
 DA:2,1
 DA:3,1
@@ -91,13 +91,13 @@ DA:101,1
 DA:102,1
 DA:103,1
 DA:108,1
-DA:109,0
-DA:110,0
+DA:109,2
+DA:110,2
 DA:114,1
 DA:115,1
 DA:118,1
 LF:68
-LH:43
+LH:45
 BRDA:14,1,0,1
 BRDA:14,1,1,1
 BRDA:38,2,0,0
@@ -111,9 +111,9 @@ BRDA:76,5,1,1
 BRDA:101,6,0,1
 BRDA:101,6,1,0
 BRDA:109,7,0,0
-BRDA:109,7,1,0
+BRDA:109,7,1,2
 BRF:14
-BRH:6
+BRH:7
 end_of_record
 TN:
 SF:/Users/michaelherman/Documents/repos/github/referFriend/routes/index.js

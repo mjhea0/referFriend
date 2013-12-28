@@ -107,7 +107,7 @@ app.use(function(req, res, next){
 // authentication helper
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) { return next(); }
-  res.redirect('/error');
+  res.redirect('/');
 }
 
 // run server

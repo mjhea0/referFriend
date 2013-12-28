@@ -11,10 +11,10 @@ var GoogleStrategy = require('passport-google').Strategy;
 
 console.log(process.env.NODE_ENV)
 
-var env = process.env.NODE_ENV
-if ('dev' == env) {
+
+if (!process.env.NODE_ENV) {
   var config = require('./config-dev.js');
-} else {
+} else if (process.env.NODE_ENV == "Production") {
   var config = require('./config-pro.js');
 };
 

@@ -1,4 +1,4 @@
-TESTS = test/*.js
+TESTS = tests/*.js
 ISTANBUL = cover _mocha -- -R spec
 
 test: 

@@ -14,6 +14,7 @@
     "mocha": "~1.16.2",
     "supertest": "~0.8.2",
     "istanbul": "~0.2.1",
-    "mocha-istanbul": "~0.2.0"
+    "mocha-istanbul": "~0.2.0",
+    "should": "~2.1.1"
   }
 }

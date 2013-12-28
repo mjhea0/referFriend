@@ -19,15 +19,6 @@ describe('referFriend', function(){
       .get('/account')
       .expect(302, done);
     })
-  });
-
-  describe('when posting to /account', function(){
-    it('should respond with 200', function(done){
-      request(app)
-      .post('/account')
-      .send({ name: "Mike", email: "user@gluck.com", createdDate:new Date(), refererEmail: "test@tester123.com" })
-      .expect(302, done)        
-    })
   }); 
 
   describe('when requesting resource /missing', function(){

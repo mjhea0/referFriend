@@ -9,9 +9,10 @@ var user = require('./models/users.js');
 var passport = require('passport');
 var GoogleStrategy = require('passport-google').Strategy;
 
-if ('development' == app.get('env')) {
+var env = process.env.NODE_ENV || 'dev';
+if ('dev' == env) {
   var config = require('./config-dev.js');
-} else if ('production' == app.get('env')) {
+} else if ('production' == env) {
   var config = require('./config-pro.js');
 };
 
